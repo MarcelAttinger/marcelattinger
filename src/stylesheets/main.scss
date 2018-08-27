@@ -1,0 +1,19 @@
+//Basics
+@import "variables.scss";
+@import "mixins.scss";
+
+//Plugins
+@import "vendor/_slick.scss";
+@import "vendor/magnific-popup.scss";
+@import "vendor/bootstrap.scss";
+
+//Modules
+@import "global.scss";
+@import "imprint.scss";
+@import "navbar.scss";
+@import "masthead.scss";
+@import "clients-slider.scss";
+@import "portfolio.scss";
+@import "contact.scss";
+@import "footer.scss";
+@import "bootstrap-overrides.scss";

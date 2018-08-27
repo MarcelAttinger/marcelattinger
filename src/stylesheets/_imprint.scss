@@ -1,0 +1,19 @@
+
+.imprint{
+  h2{
+    opacity: 1;
+  }
+
+  a{
+    text-decoration: underline;
+
+    &:hover{
+      color: $highlight;
+      text-decoration: underline;
+    }
+  }
+
+  strong{
+    display: block;
+  }
+}

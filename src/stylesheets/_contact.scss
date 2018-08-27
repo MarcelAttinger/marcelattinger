@@ -1,0 +1,54 @@
+// Styling for the contact section
+.floating-label-form-group {
+  position: relative;
+
+  input{
+    border: none;
+    border-bottom: 2px solid $primary;
+    border-radius: 0;
+    background: none;
+    box-shadow: none !important;
+    font-size: 1.5em;
+    position: relative;
+    padding: 10px 0;
+    z-index: 1;
+
+    &:focus{
+      border-bottom: 2px solid $primary;
+    }
+  }
+
+  label {
+    font-size: 0.85em;
+    line-height: 1.764705882em;
+    position: relative;
+    z-index: 0;
+    top: 2em;
+    display: block;
+    margin: 0;
+    -webkit-transition: top 0.3s ease, opacity 0.3s ease;
+    -moz-transition: top 0.3s ease, opacity 0.3s ease;
+    -ms-transition: top 0.3s ease, opacity 0.3s ease;
+    transition: top 0.3s ease, opacity 0.3s ease;
+    vertical-align: middle;
+    vertical-align: baseline;
+    opacity: 0;
+  }
+  &:not(:first-child) {
+    padding-left: 14px;
+    border-left: 1px solid $gray-200;
+  }
+}
+
+.floating-label-form-group-with-value {
+  label {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.floating-label-form-group-with-focus {
+  label {
+    color: $primary;
+  }
+}

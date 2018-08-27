@@ -1,0 +1,45 @@
+.footer {
+  /*background:
+          linear-gradient(
+                          rgba(0, 0, 0, 0.7),
+                          rgba(0, 0, 0, 0.7)
+          ),
+          url(../img/background2.jpg) 100% 100%; */
+  padding-top: 5rem;
+  color: $secondary;
+
+  .row{
+    display: flex;
+    align-items: center;
+
+    a{
+      color: $secondary;
+
+      &.btn-social{
+        &:focus{
+          box-shadow: none;
+          color: $white;
+        }
+
+        &:hover{
+          color: $primary;
+        }
+      }
+
+      &.underline-link{
+        border-bottom: 2px solid transparent;
+        transition: border-bottom 0.35s ease-in-out;
+
+        &:hover{
+          border-color: $white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    margin-top: 15px;
+  }
+}
+
