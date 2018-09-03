@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
 
 const Footer = ({ data }) => (
 	<footer className="footer text-center">
 		<div className="container">
 			<div className="row">
 				<div className="col-md-4 mb-5 mb-lg-0">
-					<a className="lead underline-link" href="imprint.html">Impressum</a>
+					<Link className="lead underline-link" to="/imprint/">Impressum</Link>
 					<br/>
 						<a className="lead underline-link" href="data-protection.html">Datenschutzerklärung</a>
 				</div>
@@ -14,13 +15,13 @@ const Footer = ({ data }) => (
 					<ul className="list-inline mb-0">
 						<li className="list-inline-item">
 							<a className="btn btn-outline-light btn-social text-center rounded-circle" target="_blank" href="#">
-								<i className="fa fa-fw fa-facebook"></i>
+								<i className="fa fa-fw fa-facebook-f"> </i>
 							</a>
 						</li>
 						<li className="list-inline-item">
 							<a className="btn btn-outline-light btn-social text-center rounded-circle" target="_blank"
 							   href="https://www.xing.com/profile/Marcel_Attinger/cv">
-								<i className="fa fa-fw fa-xing"></i>
+								<i className="fa fa-fw fa-xing"> </i>
 							</a>
 						</li>
 					</ul>

@@ -7,7 +7,10 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(limit: 1000) {
+      allMarkdownRemark(
+        limit: 1000,
+        filter: { frontmatter: { newPage: { eq: true} }}
+      ) {
         edges {
           node {
             id
@@ -40,10 +43,10 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         ),
         // additional data can be passed via context
         context: {
-          id,
-        },
+          id
+        }
       });
-    })
+    });
 
     // Tag pages:
     let tags = [];
