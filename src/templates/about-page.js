@@ -1,58 +1,55 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Content, { HTMLContent } from '../components/Content'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Header from '../components/header';
 
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content
+export const AboutPageTemplate = (props) => {
 
-  return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
+	return (
+		<div className="about">
+			<Header />
+			<div className="container text-center mb-4 mt-4">
+				<div className="col-lg-8 ml-auto mr-auto">
+					<p>{props.description}</p>
+				</div>
+			</div>
+		</div>
+	)
+};
 
 AboutPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string,
-  contentComponent: PropTypes.func,
-}
+	title: PropTypes.string.isRequired,
+	description: PropTypes.string
+};
 
-const AboutPage = ({ data }) => {
-  const { markdownRemark: post } = data
+const AboutPage = ({data}) => {
+	const {markdownRemark: post} = data;
 
-  return (
-    <AboutPageTemplate
-      contentComponent={HTMLContent}
-      title={post.frontmatter.title}
-      content={post.html}
-    />
-  )
-}
+	return (
+		<AboutPageTemplate
+			title={post.frontmatter.title}
+		    description={post.frontmatter.description}
+			image={post.frontmatter.stage.image}
+			headline={post.frontmatter.stage.headline}
+		    subHeadline={post.frontmatter.stage.subHeadline}
+			buttonText={post.frontmatter.stage.buttonText}
+			buttonTarget={post.frontmatter.stage.buttonTarget}
+		/>
+	)
+};
 
 AboutPage.propTypes = {
-  data: PropTypes.object.isRequired,
-}
+	data: PropTypes.object
+};
 
-export default AboutPage
+export default AboutPage;
 
-export const aboutPageQuery = graphql`
+export const pageQuery = graphql`
   query AboutPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      html
       frontmatter {
-        title
+         title
+         templateKey
+         description
       }
     }
   }

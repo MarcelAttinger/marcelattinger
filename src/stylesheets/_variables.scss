@@ -1,19 +1,64 @@
 // Variables
 
 $white: #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #868e96 !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
 $black: #000 !default;
 
-$textcolor: #8E8D8A;
+$basic-grey: #EDEDED;
+
+$textcolor: #242729;
 $primary: #1A1A1D;
 $secondary: #FFFFFF;
-$highlight: #6F2232;
+$highlight: #669900;
+$lightgray: #ced4da;
+$middlegray: #8898A8;
 
+//Margins
+$module-margin-bot: 60px;
+
+$headerHeight: 124px;
+
+//
+// Breakpoints
+//
+$breakpoints: (
+        'before-mobile' : '(max-width: 767px)', // S
+        'mobile' : '(min-width: 768px)',
+        'before-tablet' : '(max-width: 1023px)', // M
+        'tablet' : '(min-width: 1024px)',
+        'before-desk': '(max-width: 1141px)', // L
+        'desk' : '(min-width: 1142px)' // XL
+);
+
+$breakpoint-small: map-get($breakpoints, before-mobile);
+$breakpoint-portable: map-get($breakpoints, mobile);
+$breakpoint-tablet: map-get($breakpoints, before-tablet);
+$breakpoint-after-tablet: map-get($breakpoints, tablet);
+$breakpoint-before-desk: map-get($breakpoints, before-desk);
+$breakpoint-desk: map-get($breakpoints, desk);
+
+
+/**
+ * Taken from csswizardry-grids
+ * ---------
+ * Enclose a block of code with a media query as named in `$breakpoints`.
+ */
+@mixin grid-media-query($media-query) {
+  $breakpoint-found: false;
+
+  @each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $declaration: nth($breakpoint, 2);
+
+    @if $media-query == $name and $declaration {
+      $breakpoint-found: true;
+
+      @media only screen and #{$declaration} {
+        @content;
+      }
+    }
+  }
+
+  @if not $breakpoint-found {
+    @warn "Breakpoint ‘#{$media-query}’ does not exist";
+  }
+}

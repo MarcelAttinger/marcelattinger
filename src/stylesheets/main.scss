@@ -1,19 +1,31 @@
-//Basics
-@import "variables.scss";
-@import "mixins.scss";
+//Bootstrap Core
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+//Bootstrap Modules
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/forms";
 
-//Plugins
-@import "vendor/_slick.scss";
-@import "vendor/magnific-popup.scss";
-@import "vendor/bootstrap.scss";
+//Custom Variables
+@import "variables";
+@import "mixins";
+@import "global";
 
-//Modules
-@import "global.scss";
-@import "imprint.scss";
-@import "navbar.scss";
-@import "masthead.scss";
-@import "clients-slider.scss";
-@import "portfolio.scss";
-@import "contact.scss";
-@import "footer.scss";
-@import "bootstrap-overrides.scss";
+//Custom Global Elements
+@import "header";
+@import "footer";
+
+//Custom Modules
+@import "about";
+@import "events";
+@import "leftRightTeaser";
+@import "featuredProducts";
+@import "_recipe-detail.scss";
+@import "recipe-overview";
+@import "wide-teaser";
+@import "contact";

@@ -13,46 +13,32 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
+      - {label: "NewPage", name: "newPage", widget: "hidden", default: "true"}
+      - {label: "Überschrift", name: "title", widget: "string"}
+      - {label: "Unterüberschrift", name: "subheadline", widget: "text"}
+      - {label: "Verröffentlichumsdatum", name: "date", widget: "datetime"}
+      - {label: "Vorschaubild auf Übersichtsseite", name: "previewImage", widget: "image"}
+      - {label: "Bild über dem Blogartikel", name: "blogImage", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
-
   - name: "pages"
-    label: "Pages"
+    label: "Seiten"
     files:
+      - file: "src/pages/indexpage/index.md"
+        label: "Startseite"
+        name: "home"
+        fields:
+           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
+           - {label: "NewPage", name: "newPage", widget: "hidden", default: "false"}
+           - {label: Bühne, name: stage, widget: object, fields: [{label: Bild, name: image, widget: image}, {label: Überschrift, name: headline, widget: string}, {label: Unterüberschrift, name: subHeadline, widget: string}, {label: Linkziel, name: buttonTarget, widget: string}, {label: Linktext, name: buttonText, widget: string}]}
+           - {label: Links- und Rechts Teaser, name: lrteasers, widget: list, fields: [{label: Bild, name: image, widget: image}, {label: Bild Beschreibung, name: imageAlt, widget: string}, {label: Überschrift, name: headline, widget: string}, {label: Text, name: paragraph, widget: text}, {label: Linkziel, name: linkTarget, widget: string}, {label: Linktext, name: linkDesc, widget: string}]}
+           - {label: Bildteaser, name: featuredProducts, widget: list, fields: [{label: Bild, name: image, widget: image}, {label: Überschrift, name: headline, widget: string}, {label: Linkziel, name: linkTarget, widget: string}, {label: Neuen Tab öffnen, name: blank, widget: boolean, default: false}]}
+           - {label: Vorstellung, name: wideTeaser, widget: object, fields: [{label: Überschrift, name: headline, widget: string}, {label: Beschreibung, name: description, widget: text}]}
+           - {label: Events, name: events, widget: list, fields: [{label: Überschrift, name: headline, widget: string}, {label: Startdatum, name: startDate, widget: date}, {label: Enddatum, name: endDate, widget: date}, {label: Bild, name: image, widget: image}, {label: Bild Beschreibung, name: imageAlt, widget: string}, {label: Linkbeschreibung, name: linkDesc, widget: string}, {label: Linkziel, name: linkTarget, widget: string}, {label: Beschreibung, name: paragraph, widget: text}]}
       - file: "src/pages/about/index.md"
-        label: "About"
+        label: "Über uns"
         name: "about"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
-      - file: "src/pages/products/index.md"
-        label: "Products Page"
-        name: "products"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
-          - {label: Full_image, name: full_image, widget: image}
-          - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
-      - file: "src/pages/indexpage/index.md"
-        name: "indexpage"
-        label: "Hauptseite"
-        fields:
-         - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-         - {label: Title, name: title, widget: string}
-         - {label: Buehne, name: masthead, widget: object, fields: [{label: Bild, name: image, widget: image}, {label: Name, name: name, widget: string}, {label: Claim, name: claim, widget: string}]}
-         - {label: Service, name: services, widget: list, fields: [{label: Überschrift, name: headline, widget: string}, {label: Beschreibung, name: description, widget: text}]}
-         - {label: Über Mich, name: aboutMe, widget: object, fields: [{label: Überschrift, name: headline, widget: string}, {label: Linker Text, name: leftText, widget: text}, {label: Rechter Text, name: rightText, widget: text}]}
-         - {label: Portfolio, name: portfolio, widget: list, fields: [{label: Bild, name: image, widget: image}, {label: Bild Alt Text, name: imageAlt, widget: string}, {label: Lightbox, name: item, widget: object, fields: [{label: Linkziel, name: linkTarget, widget: string}, {label: Bild, name: image, widget: image}, {label: Bild Alt Text, name: imageAlt, widget: string}, {label: Ueberschrift, name: headline, widget: string}, {label: Beschreibung, name: description, widget: text}, {label: Zitatheadline, name: testimonialHeadline, widget: string}, {label: Zitatliste, name: testimonialList, widget: list, fields: [{label: Listenelement, name: listItem, widget: string}]}, {label: Technische Ueberschrift, name: technicalHeadline, widget: string}, {label: Technische Beschreibung, name: technicalDescription, widget: text}]}]}
-         - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Kunde, name: author, widget: string}, {label: Bild, name: image, widget: image}, {label: Bild Alt Text, name: imageAlt, widget: string}, {label: quote, name: quote, widget: text}, {label: Linkziel, name: linkTarget, widget: string}]}
-
-
+          - {label: "NewPage", name: "newPage", widget: "hidden", default: "true"}
+          - {label: Bühne, name: stage, widget: object, fields: [{label: Bild, name: image, widget: image}, {label: Überschrift, name: headline, widget: string}, {label: Unterüberschrift, name: subheadline, widget: string}, {label: Linkziel, name: buttonTarget, widget: string}, {label: Linktext, name: buttonText, widget: string}]}
+          - {label: Über uns Beschreibung, name: description, widget: text}

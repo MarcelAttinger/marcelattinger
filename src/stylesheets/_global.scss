@@ -1,95 +1,103 @@
 // Typography
 body {
   @include body-font;
+  color: $textcolor;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @include heading-font;
-}
+h1, .h1{
+  color: $highlight;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 25px;
 
-// Custom Horizontal Rule with Star Icon
-hr.star-light,
-hr.star-dark {
-  max-width: 15rem;
-  padding: 0;
-  text-align: center;
-  border: none;
-  border-top: solid 0.25rem;
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-hr.star-light {
-  border-color: $white;
-}
-
-hr.star-dark {
-  border-color: $primary;
-}
-
-// Section Padding Settings
-section {
-  padding: 6rem 0;
-  h2 {
-    font-size: 2.25rem;
-    line-height: 2rem;
+  & + .subheadline{
+    margin-bottom: 20px;
+    margin-top: -20px;
   }
-  @media (min-width: 992px) {
-    h2 {
-      font-size: 3rem;
-      line-height: 2.5rem;
+}
+
+h2{
+  color: $highlight;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 35px;
+
+  &.mb-big{
+    margin-bottom: 45px;
+  }
+}
+
+.subheadline{
+  color: $highlight;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+//Grid Override
+.container {
+  @media  (max-width: 1139px) {
+    max-width: 100% !important;
+  }
+
+  @media (min-width: 1140px) {
+    max-width: 1140px;
+  }
+}
+
+// Standard Elements
+
+section {
+  padding: 3rem 0;
+
+  &.grey-background {
+    background-color: $basic-grey;
+  }
+}
+
+a {
+  color: $textcolor;
+  transition: color 0.35s ease-in-out;
+
+  &:hover {
+    color: $textcolor;
+    text-decoration: none;
+  }
+}
+
+.btn {
+  border-radius: 5px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  outline: 0;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  transition: all 0.35s ease-in-out;
+
+  &:active,
+  &:focus {
+    box-shadow: none;
+    outline: 0;
+  }
+
+  &.btn-primary {
+    border: 1px solid $highlight;
+    color: #fff;
+    background: $highlight;
+
+    &:hover {
+      background-color: $highlight;
+      border-color: $highlight;
+    }
+  }
+
+  &.btn-secondary {
+    background-color: $highlight;
+    border-color: $highlight;
+
+    &:hover {
+      background-color: $white;
+      color: $highlight;
     }
   }
 }
 
-//Back Link
-.back-link{
-  display: block;
-  i{
-    bottom: 1px;
-    font-size: 15px;
-    position: relative;
-  }
-}
-
-// Custom Button Size
-.btn-xl {
-  font-size: 1.25rem;
-  outline: 0;
-  padding: 10px 60px;
-
-  &:active,
-  &:focus{
-    box-shadow: none;
-    outline: 0;
-  }
-}
-
-// Custom Rounded Social Button
-.btn-social {
-  width: 3.25rem;
-  height: 3.25rem;
-  font-size: 1.25rem;
-  line-height: 2rem;
-}
-
-// Scroll to Top Button
-.scroll-to-top {
-  z-index: 1042;
-  right: 1rem;
-  bottom: 1rem;
-  display: none;
-  a {
-    width: 3.5rem;
-    height: 3.5rem;
-    background-color: fade-out($gray-900, 0.5);
-    line-height: 3.1rem;
-  }
-}

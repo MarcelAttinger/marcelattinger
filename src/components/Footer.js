@@ -1,55 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {v4} from 'uuid';
 import Link from 'gatsby-link';
 
-const Footer = ({ data }) => (
-	<footer className="footer text-center">
+const Footer = () => (
+	<footer>
 		<div className="container">
 			<div className="row">
-				<div className="col-md-4 mb-5 mb-lg-0">
-					<Link className="lead underline-link" to="/imprint/">Impressum</Link>
-					<br/>
-						<a className="lead underline-link" href="data-protection.html">Datenschutzerklärung</a>
+				<div className="col-md-4 col-lg-8">
+					<h3>Trete in Kontakt mit uns!</h3>
+					<div className="footer-links">
+						<a className="with-icon" href="https://goo.gl/maps/NnCQyyKZsRu"><span className="fa fa-map-marker">location</span> Entringerstraße 110, <br /> 72119 Ammerbuch</a>
+						<div className="ml-4">
+							<a className="with-icon" href="#"><span className="fa fa-phone">phone</span> 07073 / 302647</a>
+							<a className="with-icon" href="mailto:info@glueckskorn-schmide.de?subject=Anfrage"><span className="fa fa-envelope">mail</span>info@glückskorn-schmide.de</a>
+						</div>
+					</div>
 				</div>
-				<div className="col-md-4 mb-5 mb-lg-0">
-					<ul className="list-inline mb-0">
-						<li className="list-inline-item">
-							<a className="btn btn-outline-light btn-social text-center rounded-circle" target="_blank" href="#">
-								<i className="fa fa-fw fa-facebook-f"> </i>
-							</a>
-						</li>
-						<li className="list-inline-item">
-							<a className="btn btn-outline-light btn-social text-center rounded-circle" target="_blank"
-							   href="https://www.xing.com/profile/Marcel_Attinger/cv">
-								<i className="fa fa-fw fa-xing"> </i>
-							</a>
-						</li>
-					</ul>
+				<div className="col-md-4 justify-content-end">
+					<h3>Wichtige Links!</h3>
+					<div className="footer-links">
+						<div>
+							<Link to="/imprint/">Impressum</Link>
+							<Link to="/data-protection/">Datenschutzerklärung</Link>
+						</div>
+					</div>
 				</div>
-				<div className="col-md-4">
-					<p className="lead mb-0">Adalbert-Stifter-Weg 10
-						<br/>71116 Gärtringen</p>
-					<a className="lead underline-link" href="mailto:hi@marcelattinger.de?subject=Anfrage">hi@marcelattinger.de</a>
-				</div>
-			</div>
-		</div>
-		<div className="copyright py-4 text-center text-white">
-			<div className="container">
-				<small>Copyright &copy; Marcel Attinger</small>
 			</div>
 		</div>
 	</footer>
-)
+);
 
-Footer.propTypes = {
-	data: PropTypes.arrayOf(
-		PropTypes.shape({
-			plan: PropTypes.string,
-			price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-			description: PropTypes.string,
-			items: PropTypes.array,
-		})
-	),
-}
-
-export default Footer
+export default Footer;

@@ -1,12 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
-@import url('https://use.fontawesome.com/releases/v5.2.0/css/all.css');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700');
+@import url('https://use.fontawesome.com/releases/v5.3.1/css/all.css');
 
 @mixin body-font() {
-  font-family: 'Lato';
-}
-
-@mixin heading-font() {
-  font-weight: 500;
-  font-family: 'Montserrat';
+  font-family: 'Open Sans', sans-serif;
 }

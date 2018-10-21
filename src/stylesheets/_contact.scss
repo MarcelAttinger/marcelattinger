@@ -1,54 +1,159 @@
-// Styling for the contact section
-.floating-label-form-group {
-  position: relative;
+.contact{
 
-  input{
-    border: none;
-    border-bottom: 2px solid $primary;
-    border-radius: 0;
-    background: none;
-    box-shadow: none !important;
-    font-size: 1.5em;
-    position: relative;
-    padding: 10px 0;
-    z-index: 1;
+  ul{
+    list-style: none;
+    padding: 0;
 
-    &:focus{
-      border-bottom: 2px solid $primary;
+    li{
+      strong{
+        display: block;
+      }
     }
   }
 
-  label {
-    font-size: 0.85em;
-    line-height: 1.764705882em;
-    position: relative;
-    z-index: 0;
-    top: 2em;
-    display: block;
-    margin: 0;
-    -webkit-transition: top 0.3s ease, opacity 0.3s ease;
-    -moz-transition: top 0.3s ease, opacity 0.3s ease;
-    -ms-transition: top 0.3s ease, opacity 0.3s ease;
-    transition: top 0.3s ease, opacity 0.3s ease;
-    vertical-align: middle;
-    vertical-align: baseline;
-    opacity: 0;
-  }
-  &:not(:first-child) {
-    padding-left: 14px;
-    border-left: 1px solid $gray-200;
+  form{
+
+    .form-group{
+      margin-bottom: 23px;
+      position: relative;
+
+      label{
+        color: #495057;
+        left: 0;
+        margin-bottom: 0;
+        font-size: 12px;
+        opacity: 0;
+        position: absolute;
+        top: 3px;
+        transition: all 0.35s ease-in-out;
+        transform: translateY(0);
+      }
+
+      input{
+        border: none;
+        border-bottom: 1px solid $lightgray;
+        border-radius: 0;
+        height: auto;
+        padding-bottom: 2px;
+        padding-left: 0;
+        transition: border-color 0.35s ease-in-out;
+
+        &:focus{
+          border-color: $highlight;
+          box-shadow: none;
+
+          & + label{
+            color: $highlight;
+            opacity: 1;
+            transform: translateY(-14px);
+          }
+        }
+      }
+
+      textarea{
+        border: 1px solid $lightgray;
+        padding: 5px;
+
+        &:focus {
+          box-shadow: none;
+        }
+
+        & + label{
+          display: none;
+        }
+      }
+    }
   }
 }
 
-.floating-label-form-group-with-value {
-  label {
-    top: 0;
-    opacity: 1;
-  }
-}
+//Google Maps
+.google-map {
+  height: 500px;
+  position: relative;
+  width: 100%;
 
-.floating-label-form-group-with-focus {
-  label {
-    color: $primary;
+  .map-marker{
+
+    .fa-map-marker {
+      left: -37px;
+      position: relative;
+      top: -50px;
+
+      &:before {
+        color: #EA4335;
+        font-size: 50px;
+      }
+
+      &:after {
+        background-color: #822D28;
+        border-radius: 50%;
+        content: "";
+        display: block;
+        height: 20px;
+        left: 9px;
+        position: absolute;
+        top: 10px;
+        width: 20px;
+        z-index: 5;
+      }
+    }
+  }
+
+  .map-layer{
+    background-color: $white;
+    display: none;
+    padding: 35px 40px 20px;
+    position: absolute;
+    left: 500px;
+    top: 50px;
+
+    &.open{
+      display: block;
+    }
+
+    h3{
+      font-size: 20px;
+      color: $highlight;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    span{
+      display: block;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .fa-times{
+      font-size: 0;
+      margin-bottom: 0;
+
+      &:before{
+        color: $highlight;
+        cursor: pointer;
+        font-size: 20px;
+        position: absolute;
+        right: 15px;
+        top: 12px;
+      }
+    }
+
+    a{
+      display: flex;
+
+      .fa{
+        font-size: 0;
+        margin-right: 10px;
+
+        &:before{
+          color: $highlight;
+          display: block;
+          font-size: 19px;
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
   }
 }
