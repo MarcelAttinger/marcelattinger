@@ -28,11 +28,6 @@ const AboutPage = ({data}) => {
 		<AboutPageTemplate
 			title={post.frontmatter.title}
 		    description={post.frontmatter.description}
-			image={post.frontmatter.stage.image}
-			headline={post.frontmatter.stage.headline}
-		    subHeadline={post.frontmatter.stage.subHeadline}
-			buttonText={post.frontmatter.stage.buttonText}
-			buttonTarget={post.frontmatter.stage.buttonTarget}
 		/>
 	)
 };
