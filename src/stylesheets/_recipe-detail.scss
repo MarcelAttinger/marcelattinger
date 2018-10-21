@@ -1,0 +1,39 @@
+
+.recipe-detail {
+  h1{
+    margin-bottom: 45px;
+  }
+
+  .recipe-pic{
+    float: left;
+    margin-bottom: 15px;
+    margin-right: 15px;
+  }
+
+  table{
+    tr:nth-child(even){
+      background-color: $white;
+    }
+  }
+
+  ul{
+    padding-left: 20px;
+
+    &.checklist{
+      list-style: none;
+      padding: 0;
+    }
+
+    li{
+      .fa{
+        font-size: 0;
+
+        &:before{
+          color: $highlight;
+          font-size: 20px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
