@@ -54,3 +54,4 @@ events:
     startDate: '2018-12-06'
     paragraph: Seminar für Hunde bei uns in Altdorf. Infos folgen bald
 ---
+
